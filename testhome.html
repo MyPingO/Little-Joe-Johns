@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Fresh Cuts Barber Shop</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        :root {
+            --bg-dark: #1a1a1a;
+            --text-light: #f8f9fa;
+            --text-muted: #adb5bd;
+            --accent: #d32f2f;
+            --bg-secondary: #222;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: #111;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .navbar-brand i {
+            color: var(--accent);
+        }
+        .navbar-nav .nav-link {
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .navbar-nav .nav-link:hover {
+            color: var(--accent);
+        }
+        .dropdown-menu {
+            background: #2a2a2a;
+            border: none;
+        }
+        .dropdown-item {
+            color: var(--text-light);
+        }
+        .dropdown-item:hover {
+            background: #333;
+            color: var(--accent);
+        }
+
+        /* HERO */
+        .hero {
+    position: relative;
+    min-height: 70vh; /* Fills at least 70% of the viewport height */
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://images.pexels.com/photos/1570806/pexels-photo-1570806.jpeg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+/* For medium screens (tablets and small desktops) */
+@media (max-width: 992px) {
+    .hero {
+        background-position: center; /* Keep the focal point centered */
+        min-height: 60vh; /* Adjust height for smaller screens */
+    }
+}
+
+/* For smaller screens (mobile) */
+@media (max-width: 768px) {
+    .hero {
+        background-position: top center; /* Focus on the top area of the image */
+        min-height: 50vh; /* Reduce height further for mobile */
+    }
+}
+
+
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 20px auto;
+            color: var(--text-muted);
+        }
+        .hero .btn {
+            background: var(--accent);
+            border: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .hero .btn:hover {
+            background: #b71c1c;
+        }
+
+        /* SERVICES SECTION */
+        #services {
+            padding: 5rem 0;
+            background: var(--bg-dark);
+        }
+        #services h2 {
+            margin-bottom: 2rem;
+        }
+        .service-card {
+            background: var(--bg-secondary);
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+        .service-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .service-card .card-body {
+            padding: 2rem 1rem;
+        }
+        .service-card i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        .service-card h5 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* GALLERY SECTION */
+        #gallery {
+            padding: 5rem 0;
+            background: #111;
+            display: flex;
+            justify-content: center;
+        }
+        #gallery h2 {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        /* Center the last row when images don't fill it */
+.gallery-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr); /* Adjusts for fewer items */
+}
+
+.gallery-grid::after {
+    content: '';
+    display: block;
+    width: 0;
+}
+        .gallery-grid img {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Makes all images square */
+            object-fit: cover; /* Ensures the image fills the area evenly */
+            transition: transform 0.3s ease;
+        }
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+
+@media (min-width: 576px) { /* Small mobile devices */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+}
+
+@media (min-width: 992px) { /* Tablets and larger */
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    }
+}
+
+        /* TEAM SECTION */
+        #team {
+            padding: 5rem 0;
+            background: var(--bg-dark);
+        }
+        #team h2 {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .team-member {
+            text-align: center;
+            color: var(--text-light);
+        }
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .team-member h5 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .team-member p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* TESTIMONIALS */
+        #testimonials {
+            background: #121212 url('https://www.pexels.com/photo/barber-shop-interior-1231234/') center/cover no-repeat fixed;
+            background-blend-mode: multiply;
+            padding: 5rem 0;
+        }
+        #testimonials h2 {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+                .carousel-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .carousel-item {
+            text-align: center;
+            color: var(--text-muted);
+        }
+        .carousel-item p {
+            font-style: italic;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 1rem;
+        }
+        .carousel-item .icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .carousel-control-prev,
+.carousel-control-next {
+    z-index: 2; /* Ensure arrows are on top of images */
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto; /* Allows the arrows to be less intrusive */
+}
+@media (max-width: 768px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 20px; /* Reduce arrow size on smaller screens */
+    }
+}
+
+        /* FOOTER */
+        footer {
+            background: #111;
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-barber-pole"></i> Fresh Cuts
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text-uppercase fw-semibold" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">More</a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-dollar-sign"></i> Pricing</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cut"></i> Styles</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-map-marker-alt"></i> Location</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero d-flex flex-column align-items-center justify-content-center">
+        <h1>Fresh Cuts</h1>
+        <p>Where craftsmanship meets comfort. Come in for style, leave with confidence.</p>
+        <a href="#services" class="btn mt-3">Visit Us Today</a>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Our Signature Services</h2>
+            <p>Quality, expertise, and a personal touch for every client.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.XTmBRnUFZHU60qOmHG7KWwHaHa&pid=Api" class="service-image" alt="Signature Haircuts">
+                    <div class="card-body">
+                        <i class="fas fa-scissors"></i>
+                        <h5>Signature Haircuts</h5>
+                        <p>From modern fades to timeless classics, tailored to your look.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.VgK_FmJafvF4gqOvdVTZpgHaLH&pid=Api" class="service-image" alt="Beard Grooming">
+                    <div class="card-body">
+                        <i class="fas fa-beard"></i>
+                        <h5>Beard Grooming</h5>
+                        <p>Meticulous shaping, trimming, and styling to define your presence.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.l-0N7ZhUXqi9vHhprkm61gHaHa&pid=Api" class="service-image" alt="Kids’ Cuts">
+                    <div class="card-body">
+                        <i class="fas fa-child"></i>
+                        <h5>Kids’ Cuts</h5>
+                        <p>Fun, relaxed experiences leaving young ones looking and feeling great.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="fw-bold text-center">Style Gallery</h2>
+            <p class="text-center mb-5">Explore a selection of our recent work and trending styles.</p>
+            <div class="gallery-grid">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.D8pkiSr7krlwju8emLIoegHaHa&pid=Api" alt="Style 1">
+                <img src="https://t4.ftcdn.net/jpg/03/16/58/41/240_F_316584183_PZiOpDCqewXtEAajC1lAkuUy1YvRvNGA.jpg" alt="Style 2">
+                <img src="https://t4.ftcdn.net/jpg/03/26/98/51/240_F_326985142_1aaKcEjMQW6ULp6oI9MYuv8lN9f8sFmj.jpg" alt="Style 3">
+                <img src="https://t3.ftcdn.net/jpg/02/93/24/24/240_F_293242421_0sQ43dEL8GDLiGy8gUEBXePMGA8uhJdX.jpg" alt="Style 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="fw-bold text-center">What Our Clients Say</h2>
+            <div id="testimonialCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"I’ve never felt more confident walking out of a barber. Exceptional service and skill."</p>
+                        <small class="text-light">– Alex R.</small>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"My kids actually look forward to their haircuts now. Great atmosphere and results."</p>
+                        <small class="text-light">– Maria L.</small>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"They nailed the modern style I wanted. This place keeps me coming back month after month."</p>
+                        <small class="text-light">– David S.</small>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Fresh Cuts Barber Shop | Crafted with Style & Passion</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
