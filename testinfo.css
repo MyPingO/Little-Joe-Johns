@@ -97,20 +97,73 @@
     }
 }
 
+.image-stack {
+    position: relative;
+    display: inline-block;
+    width: fit-content; /* Ensure the container wraps tightly around the image */
+}
 
+.image-stack::before,
+.image-stack::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Light "blank image" effect */
+    border: 2px solid #ddd; /* Mimic image border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform-origin: center; /* Ensures alignment relative to the image center */
+    z-index: -1; /* Place behind the main image */
+}
+
+/* First layer offset */
+.image-stack::before {
+    transform: translate(-3.5%, -10px) rotate(-4deg); /* Adjust offsets and rotation */
+}
+
+/* Second layer offset */
+.image-stack::after {
+    transform: translate(3.5%, 0px) rotate(4deg); /* Adjust offsets and rotation */
+    opacity: 0.8; /* Slight transparency for depth */
+}
+
+.main-image {
+    position: relative;
+    z-index: 1; /* Ensures the image stays above the pseudo-elements */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transform: rotate(-0.85deg); /* Rotate the main image slightly */
+}
+
+.service-section {
+    margin-top: 2rem;
+}
+
+.service-image {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.service-section h4 {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+}
 
 /* PRICING SECTION */
 #pricing {
-    background: url('https://img.freepik.com/free-photo/vintage-frame-salon-tools-wooden-table-jobs-career-concept_53876-143259.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66)), url('static/services.jpg') center/cover no-repeat;
     min-height: 100vh;
-}
-#pricing::before {
-    background-color: rgba(0,0,0,0.75);
 }
 .pricing-menu {
     max-width: 600px;
     margin: 0 auto;
-    padding: 2rem;
     border-radius: 5px;
 }
 .pricing-menu h2 {
@@ -212,9 +265,6 @@ footer a:hover {
     }
     #hero-location p {
         font-size: 1rem;
-    }
-    .hours-table, .pricing-menu {
-        padding: 1rem;
     }
     h2 {
         font-size: 2rem;
