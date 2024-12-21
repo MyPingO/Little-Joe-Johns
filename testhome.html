@@ -1,448 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Fresh Cuts Barber Shop</title>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Little Joe & John's Barber Shop</title>
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
 
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap Icons & Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-    <style>
-        :root {
-            --bg-dark: #1a1a1a;
-            --text-light: #f8f9fa;
-            --text-muted: #adb5bd;
-            --accent: #d32f2f;
-            --bg-secondary: #222;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-light);
-            margin: 0;
-            padding: 0;
-        }
-
-        /* NAVBAR */
-        .navbar {
-            background: #111;
-        }
-        .navbar-brand {
-            font-weight: 700;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .navbar-brand i {
-            color: var(--accent);
-        }
-        .navbar-nav .nav-link {
-            color: var(--text-light);
-            font-weight: 600;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-        .navbar-nav .nav-link:hover {
-            color: var(--accent);
-        }
-        .dropdown-menu {
-            background: #2a2a2a;
-            border: none;
-        }
-        .dropdown-item {
-            color: var(--text-light);
-        }
-        .dropdown-item:hover {
-            background: #333;
-            color: var(--accent);
-        }
-
-        /* HERO */
-        .hero {
-    position: relative;
-    min-height: 70vh; /* Fills at least 70% of the viewport height */
-    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('https://images.pexels.com/photos/1570806/pexels-photo-1570806.jpeg') center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding: 0 1rem;
-}
-
-/* For medium screens (tablets and small desktops) */
-@media (max-width: 992px) {
-    .hero {
-        background-position: center; /* Keep the focal point centered */
-        min-height: 60vh; /* Adjust height for smaller screens */
-    }
-}
-
-/* For smaller screens (mobile) */
-@media (max-width: 768px) {
-    .hero {
-        background-position: top center; /* Focus on the top area of the image */
-        min-height: 50vh; /* Reduce height further for mobile */
-    }
-}
-
-
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 20px auto;
-            color: var(--text-muted);
-        }
-        .hero .btn {
-            background: var(--accent);
-            border: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            padding: 0.8rem 2rem;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-        .hero .btn:hover {
-            background: #b71c1c;
-        }
-
-        /* SERVICES SECTION */
-        #services {
-            padding: 5rem 0;
-            background: var(--bg-dark);
-        }
-        #services h2 {
-            margin-bottom: 2rem;
-        }
-        .service-card {
-            background: var(--bg-secondary);
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
-        .service-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        .service-card .card-body {
-            padding: 2rem 1rem;
-        }
-        .service-card i {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--accent);
-        }
-        .service-card h5 {
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-        }
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 0;
-        }
-
-        /* GALLERY SECTION */
-        #gallery {
-            padding: 5rem 0;
-            background: #111;
-            display: flex;
-            justify-content: center;
-        }
-        #gallery h2 {
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        /* Center the last row when images don't fill it */
-.gallery-grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(2, 1fr); /* Adjusts for fewer items */
-}
-
-.gallery-grid::after {
-    content: '';
-    display: block;
-    width: 0;
-}
-        .gallery-grid img {
-            width: 100%;
-            aspect-ratio: 1 / 1; /* Makes all images square */
-            object-fit: cover; /* Ensures the image fills the area evenly */
-            transition: transform 0.3s ease;
-        }
-        .gallery-grid img:hover {
-            transform: scale(1.05);
-        }
-
-@media (min-width: 576px) { /* Small mobile devices */
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    }
-}
-
-@media (min-width: 992px) { /* Tablets and larger */
-    .gallery-grid {
-        grid-template-columns: repeat(4, 1fr); /* 4 columns */
-    }
-}
-
-        /* TEAM SECTION */
-        #team {
-            padding: 5rem 0;
-            background: var(--bg-dark);
-        }
-        #team h2 {
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        .team-member {
-            text-align: center;
-            color: var(--text-light);
-        }
-        .team-member img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        }
-        .team-member h5 {
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        .team-member p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* TESTIMONIALS */
-        #testimonials {
-            background: #121212 url('https://www.pexels.com/photo/barber-shop-interior-1231234/') center/cover no-repeat fixed;
-            background-blend-mode: multiply;
-            padding: 5rem 0;
-        }
-        #testimonials h2 {
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-                .carousel-inner {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .carousel-item {
-            text-align: center;
-            color: var(--text-muted);
-        }
-        .carousel-item p {
-            font-style: italic;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 1rem;
-        }
-        .carousel-item .icon {
-            font-size: 2rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-        .carousel-control-prev,
-.carousel-control-next {
-    z-index: 2; /* Ensure arrows are on top of images */
-    top: 50%;
-    transform: translateY(-50%);
-    width: auto; /* Allows the arrows to be less intrusive */
-}
-@media (max-width: 768px) {
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 20px; /* Reduce arrow size on smaller screens */
-    }
-}
-
-        /* FOOTER */
-        footer {
-            background: #111;
-            padding: 2rem 0;
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="testhome.css">
+    <link rel="stylesheet" href="animations.css">
 </head>
-<body>
 
+<body>
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-barber-pole"></i> Fresh Cuts
-            </a>
+            <a class="navbar-brand" href="#">Little Joe <span style="color: red;">&</span> John's</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse text-uppercase fw-semibold" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">More</a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-dollar-sign"></i> Pricing</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-cut"></i> Styles</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-map-marker-alt"></i> Location</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-envelope"></i> Contact</a></li>
-                        </ul>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#work">See Our Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="hero d-flex flex-column align-items-center justify-content-center">
-        <h1>Fresh Cuts</h1>
-        <p>Where craftsmanship meets comfort. Come in for style, leave with confidence.</p>
-        <a href="#services" class="btn mt-3">Visit Us Today</a>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="container">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold">Our Signature Services</h2>
-            <p>Quality, expertise, and a personal touch for every client.</p>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card service-card">
-                    <img src="https://tse2.mm.bing.net/th?id=OIP.XTmBRnUFZHU60qOmHG7KWwHaHa&pid=Api" class="service-image" alt="Signature Haircuts">
-                    <div class="card-body">
-                        <i class="fas fa-scissors"></i>
-                        <h5>Signature Haircuts</h5>
-                        <p>From modern fades to timeless classics, tailored to your look.</p>
+    <section id="hero" class="full-section">
+        <div class="container text-center">
+            <!-- Hero Title -->
+            <div class="hero-content fade-up">
+                <div>
+                    <h1 class="fw-bold text-uppercase">About Us</h1>
+                    <div class="container fade mb-5">
+                        <hr class="hr-grow"
+                            style="border: none; border-top: 3px solid #ff9797; margin: 0; opacity: 1s; transition-delay: 1s;">
                     </div>
                 </div>
+                <p class="mt-3 fadeafterdelay fadeafterdelay-2 fst-italic">Proudly serving the community since 1964.
+                    Quality cuts, timeless style, and a tradition
+                    of excellence.</p>
             </div>
-            <div class="col-md-4">
-                <div class="card service-card">
-                    <img src="https://tse1.mm.bing.net/th?id=OIP.VgK_FmJafvF4gqOvdVTZpgHaLH&pid=Api" class="service-image" alt="Beard Grooming">
-                    <div class="card-body">
-                        <i class="fas fa-beard"></i>
-                        <h5>Beard Grooming</h5>
-                        <p>Meticulous shaping, trimming, and styling to define your presence.</p>
+            <!-- Statistics -->
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-12 pt-lg-0 pt-md-5 fadeafterdelay fadeafterdelay-3">
+                    <h2 class="statistic fw-bold ps-4" data-count="60" data-duration="3000">0</h2>
+                    <div class="d-flex justify-content-center align-items-center gap-2">
+                        <i class="bi bi-calendar3 stat-icon fs-3"></i>
+                        <p class="mt-1">Years in Business</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card service-card">
-                    <img src="https://tse1.mm.bing.net/th?id=OIP.l-0N7ZhUXqi9vHhprkm61gHaHa&pid=Api" class="service-image" alt="Kids’ Cuts">
-                    <div class="card-body">
-                        <i class="fas fa-child"></i>
-                        <h5>Kids’ Cuts</h5>
-                        <p>Fun, relaxed experiences leaving young ones looking and feeling great.</p>
+                <div class="col-lg-4 col-md-12 pt-lg-0 pt-5 fadeafterdelay fadeafterdelay-3.5">
+                    <h2 class="statistic fw-bold ps-4" data-count="250" data-duration="4000">0</h2>
+                    <div class="d-flex justify-content-center align-items-center gap-2">
+                        <i class="bi bi-star-fill stat-icon fs-3"></i>
+                        <p class="mt-1">5-Star Reviews</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12 pt-lg-0 pt-5 fadeafterdelay fadeafterdelay-4">
+                    <h2 class="statistic fw-bold ps-4" data-count="10000" data-duration="5000">0</h2>
+                    <div class="d-flex justify-content-center align-items-center gap-2">
+                        <i class="bi bi-people-fill stat-icon fs-2"></i>
+                        <p class="mt-1">Happy Customers</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- GALLERY -->
-    <section id="gallery">
+    <hr style="border: none; border-top: 10px solid #ff5b5b; opacity: 1; margin: 0; width: 100%; position: relative;">
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="full-section bg-light">
+        <div class="container py-5">
+            <!-- Title and Story -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">
+                    Our Legacy
+                    <hr class="hr-grow mt-2"
+                        style="border: none; border-top: 2px solid #db5858; margin: 0; opacity: 1s; transition-delay: 1;">
+                </h2>
+                <p class="mt-3">Since 1964, Little Joe & John's Barber Shop has been a symbol of tradition and quality
+                    in the community.
+                    Whether you're here for a sharp fade, a classic cut, or a moment to unwind, we are proud to provide
+                    an experience that transcends generations.</p>
+            </div>
+
+            <!-- Zigzag Images and Text -->
+            <div class="row g-5 align-items-center">
+                <!-- Row 1: Image Left, Text Right -->
+                <div class="col-lg-6 d-flex flex-column align-items-center">
+                    <div class="vertical-interior-image" style="width: 70%;">
+                        <img src="static/interior front to back.jpg" alt="Barbershop Interior Front View"
+                            class="img-fluid rounded shadow d-block mx-auto">
+                        <p class="fst-italic text-start fs-6 mt-2" style="color: rgb(198, 198, 198);">Barbershop
+                            Interior Front View</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="fw-bold text-center d-inline-block position-relative">
+                        Where Tradition Meets Style
+                        <hr class="hr-grow position-relative mx-auto"
+                            style="border-top: 2px solid #db5858; opacity: 1;">
+                    </h3>
+                    <p>Our barbershop blends classic charm with contemporary style. Step into an ambiance that’s
+                        welcoming, inspiring, and rooted in decades of service.
+                        Every haircut tells a story, and every visit feels like home. It's not just about looking
+                        good—it's about the confidence and pride that come with it.</p>
+                </div>
+            </div>
+
+            <div class="row g-5 align-items-center mt-1">
+                <!-- Row 2: Text Left, Image Right -->
+                <div class="col-lg-6 order-lg-2">
+                    <img src="static/interior back to front.jpg" alt="Barbershop Interior Back View"
+                        class="img-fluid rounded shadow">
+                    <p class="fst-italic text-start fs-6 mt-2" style="color: rgb(198, 198, 198);">Barbershop Interior
+                        Back View</p>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <h3 class="fw-bold text-center d-inline-block position-relative">
+                        A Timeless Interior
+                        <hr class="hr-grow position-relative mx-auto"
+                            style="border-top: 2px solid #db5858; opacity: 1;">
+                    </h3>
+                    <p>Feel the essence of craftsmanship in every corner. From the vintage chairs to the carefully
+                        curated decor,
+                        our shop celebrates the art of barbering while embracing the comforts of modernity. Every detail
+                        has been designed to make you feel relaxed, valued, and inspired.</p>
+                </div>
+            </div>
+
+            <div class="row g-5 align-items-center mt-1">
+                <!-- Row 3: Image Left, Text Right -->
+                <div class="col-lg-6">
+                    <img src="static/interior snacks hospitality.jpg" alt="Snacks and Hospitality"
+                        class="img-fluid rounded shadow">
+                    <p class="fst-italic text-start fs-6 mt-2" style="color: rgb(198, 198, 198);">Snacks and Hospitality
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="fw-bold text-center d-inline-block position-relative">
+                        Relax and Refresh
+                        <hr class="hr-grow position-relative mx-auto"
+                            style="border-top: 2px solid #db5858; opacity: 1;">
+                    </h3>
+                    <p>Unwind in our inviting space with complimentary snacks, beverages, and Wi-Fi. We believe every
+                        visit should not only leave you looking great
+                        but feeling recharged and valued as part of our family. It's these small touches that turn a
+                        haircut into an experience worth remembering.</p>
+                </div>
+            </div>
+
+            <!-- Full-Width Closing Section -->
+            <div class="closing-section text-center mt-5">
+                <p class="mt-4">Join us and experience the perfect blend of tradition, craftsmanship, and community.
+                    We're more than just a barbershop — we're a legacy.</p>
+            </div>
+        </div>
+
+        <div class="row mt-5 justify-content-center text-center">
+            <!-- Icon 1: Wi-Fi -->
+            <div class="col-4 col-md-2">
+                <i class="closing-icon bi bi-wifi" style="font-size: 2rem; color: #db5858;"></i>
+                <p class="mt-2 fs-6">Wi-Fi</p>
+            </div>
+            <!-- Icon 2: Snacks -->
+            <div class="col-4 col-md-2">
+                <i class="closing-icon bi bi-cup-straw" style="font-size: 2rem; color: #db5858;"></i>
+                <p class="mt-2 fs-6">Snacks</p>
+            </div>
+            <!-- Icon 3: Care -->
+            <div class="col-4 col-md-2">
+                <i class="closing-icon bi bi-heart-fill" style="font-size: 2rem; color: #db5858;"></i>
+                <p class="mt-2 fs-6">Care</p>
+            </div>
+            <!-- Icon 4: Tradition -->
+            <div class="col-4 col-md-2">
+                <i class="closing-icon bi bi-clock-history" style="font-size: 2rem; color: #db5858;"></i>
+                <p class="mt-2 fs-6">Legacy</p>
+            </div>
+            <!-- Icon 5: Craftsmanship -->
+            <div class="col-4 col-md-2">
+                <i class="closing-icon bi bi-scissors" style="font-size: 2rem; color: #db5858;"></i>
+                <p class="mt-2 fs-6">Skill</p>
+            </div>
+        </div>
+        
+    </section>
+
+
+
+    <!-- SEE OUR WORK SECTION -->
+    <section id="work" class="full-section text-center" style="background: #121212; color: white;">
         <div class="container">
-            <h2 class="fw-bold text-center">Style Gallery</h2>
-            <p class="text-center mb-5">Explore a selection of our recent work and trending styles.</p>
-            <div class="gallery-grid">
-                <img src="https://tse4.mm.bing.net/th?id=OIP.D8pkiSr7krlwju8emLIoegHaHa&pid=Api" alt="Style 1">
-                <img src="https://t4.ftcdn.net/jpg/03/16/58/41/240_F_316584183_PZiOpDCqewXtEAajC1lAkuUy1YvRvNGA.jpg" alt="Style 2">
-                <img src="https://t4.ftcdn.net/jpg/03/26/98/51/240_F_326985142_1aaKcEjMQW6ULp6oI9MYuv8lN9f8sFmj.jpg" alt="Style 3">
-                <img src="https://t3.ftcdn.net/jpg/02/93/24/24/240_F_293242421_0sQ43dEL8GDLiGy8gUEBXePMGA8uhJdX.jpg" alt="Style 4">
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonials">
-        <div class="container">
-            <h2 class="fw-bold text-center">What Our Clients Say</h2>
-            <div id="testimonialCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
+            <h2 class="fw-bold">See Our Work</h2>
+            <p class="mt-3">From sharp fades to classic cuts, explore what makes us stand out.</p>
+            <div id="workCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="icon"><i class="fas fa-quote-left"></i></div>
-                        <p>"I’ve never felt more confident walking out of a barber. Exceptional service and skill."</p>
-                        <small class="text-light">– Alex R.</small>
+                        <img src="https://source.unsplash.com/1600x900/?fade-haircut" class="d-block w-100 rounded"
+                            alt="Sharp Fade">
                     </div>
                     <div class="carousel-item">
-                        <div class="icon"><i class="fas fa-quote-left"></i></div>
-                        <p>"My kids actually look forward to their haircuts now. Great atmosphere and results."</p>
-                        <small class="text-light">– Maria L.</small>
+                        <img src="https://source.unsplash.com/1600x900/?barber-chair" class="d-block w-100 rounded"
+                            alt="Classic Cut">
                     </div>
                     <div class="carousel-item">
-                        <div class="icon"><i class="fas fa-quote-left"></i></div>
-                        <p>"They nailed the modern style I wanted. This place keeps me coming back month after month."</p>
-                        <small class="text-light">– David S.</small>
+                        <img src="https://source.unsplash.com/1600x900/?kid-haircut" class="d-block w-100 rounded"
+                            alt="Kid's Haircut">
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#workCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#workCarousel" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 </button>
             </div>
         </div>
     </section>
 
+    <!-- REVIEWS SECTION -->
+    <section id="reviews" class="full-section bg-light">
+        <div class="container text-center">
+            <h2 class="fw-bold">What Our Customers Say</h2>
+            <div class="row mt-5">
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <p>"The best barbershop in town! Always consistent and professional."</p>
+                            <h5>- Alex M.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <p>"Amazing service and friendly staff. My go-to place for a haircut!"</p>
+                            <h5>- Sarah L.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <p>"A true gem in the community. They never disappoint."</p>
+                            <h5>- Mike R.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2024 Fresh Cuts Barber Shop | Crafted with Style & Passion</p>
-        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    <footer class="py-3 bg-dark text-center text-white">
+        <p>&copy; 2024 Little Joe & John's Barber Shop</p>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Intersection Observer for fade-ups -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faders = document.querySelectorAll('.fade, [class*="fade-up"], [class*="fade-down"], .hr-grow, .statistic');
+
+            const animateCount = (counter) => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-count');
+                    const duration = +counter.getAttribute('data-duration') || 2000; // Default to 2 seconds if no duration
+                    const current = +counter.innerText.replace('+', ''); // Remove '+' for parsing
+                    const stepTime = Math.max(10, duration / target); // Calculate step time, minimum of 10ms
+                    const increment = Math.ceil(target / (duration / stepTime)); // Increment per step
+
+                    if (current < target) {
+                        counter.innerText = Math.min(current + increment, target) + "+"; // Ensure it doesn't overshoot
+                        setTimeout(updateCount, stepTime);
+                    } else {
+                        counter.innerText = target + "+"; // Final value
+                    }
+                };
+
+                updateCount();
+            };
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running'; // Starts the animation
+                        entry.target.classList.add('active');
+
+                        // Check if the target is a statistic and animate count
+                        if (entry.target.classList.contains('statistic')) {
+                            animateCount(entry.target);
+                        }
+
+                        obs.unobserve(entry.target); // Stops observing the element
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            faders.forEach(el => observer.observe(el));
+
+            document.querySelectorAll('.fadeafterdelay').forEach(el => {
+                // Extract the delay value from the class name
+                const delayClass = Array.from(el.classList).find(cls => cls.startsWith('fadeafterdelay-'));
+                if (delayClass) {
+                    const delay = parseFloat(delayClass.split('-')[1]); // Extract the "x.xx" value
+                    el.style.setProperty('--delay', delay); // Set it as a CSS variable
+                }
+            });
+        });
+    </script>
 </body>
+
+
+
 </html>
