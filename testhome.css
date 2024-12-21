@@ -9,6 +9,7 @@
     text-align: center;
     padding: 2rem;
     overflow: hidden;
+    background: url('static/white-background.jpg') center/cover no-repeat;
 }
 
 .hero-content {
@@ -108,9 +109,9 @@
 /* SEE OUR WORK SECTION */
 #work {
     padding: 4rem 2rem;
-    background: #121212;
     color: white;
     text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('static/4.jpg') center/cover no-repeat;
 }
 
 #work h2 {
@@ -126,9 +127,9 @@
     margin-bottom: 2rem;
 }
 
-#work .carousel-inner img {
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+#work img {
+    border: solid 1.5px rgb(255, 0, 0);
+    box-shadow: 0 5px 15px rgba(255, 29, 29, 0.5);
 }
 
 /* REVIEWS SECTION */
