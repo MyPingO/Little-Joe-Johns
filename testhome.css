@@ -39,7 +39,7 @@
 
 .stat-icon {
     font-size: 2.5rem; /* Larger icon size */
-    color: #ff3939;    /* Matches your existing accent color */
+    color: #ff3939; 
 }
 
 .row p {
@@ -81,7 +81,7 @@
     padding: 4rem 2rem;
     text-align: center;
     min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('static/freepik-export-20241211043332NdUo.png') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('static/freepik-export-20241211043332NdUo.png') center/cover no-repeat;
     color: white;
 }
 
@@ -142,8 +142,11 @@
     font-size: 2.5rem;
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    color: #333;
+}
+
+#reviews h1, #reviews h2, #reviews h3, #reviews h4, #reviews h5, #reviews h6 {
+    color: #555;
+    margin: 0;
 }
 
 #reviews .card {
