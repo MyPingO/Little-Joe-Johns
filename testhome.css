@@ -77,7 +77,7 @@
 }
 
 /* ABOUT SECTION */
-#about {
+#legacy {
     padding: 4rem 2rem;
     text-align: center;
     min-height: 100vh;
@@ -85,14 +85,14 @@
     color: white;
 }
 
-#about h2 {
+#legacy h2 {
     font-size: 2.5rem;
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
 }
 
-#about p {
+#legacy p {
     font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto 2rem;
@@ -100,7 +100,7 @@
     color: white;
 }
 
-#about img {
+#legacy img {
     border: 5px solid white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     margin-top: 1rem;
@@ -111,7 +111,7 @@
     padding: 4rem 2rem;
     color: white;
     text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('static/4.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('static/4.jpg') center/cover no-repeat;
 }
 
 #work h2 {
@@ -128,14 +128,14 @@
 }
 
 #work img {
-    border: solid 1.5px rgb(255, 0, 0);
-    box-shadow: 0 5px 15px rgba(255, 29, 29, 0.5);
+    border: solid 2px rgb(255, 75, 75);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.75);
 }
 
 /* REVIEWS SECTION */
 #reviews {
     padding: 4rem 2rem;
-    background: #f8f9fa;
+    background: #efefef;
 }
 
 #reviews h2 {
@@ -145,13 +145,13 @@
 }
 
 #reviews h1, #reviews h2, #reviews h3, #reviews h4, #reviews h5, #reviews h6 {
-    color: #555;
+    color: #383838;
     margin: 0;
 }
 
 #reviews .card {
     border: none;
-    background: white;
+    background: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;

@@ -58,7 +58,7 @@
 }
 .hours-table th, .hours-table td {
     border-bottom: 1px solid #bbbbbb;
-    background-color: rgba(38, 18, 9, 0.741);
+    background-color: rgba(33, 22, 17, 0.741);
     vertical-align: middle;
     height: 5rem;
     color: var(--text-light);
@@ -239,6 +239,10 @@
 .social-media a:hover {
     color: var(--accent);
     transform: translateY(-2px);
+}
+
+.smedia-icon {
+    color: #d32f2f;
 }
 
 /* FOOTER */
