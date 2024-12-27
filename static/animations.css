@@ -1,0 +1,87 @@
+/* FADE-up ANIMATIONS */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade {
+    opacity: 0;
+    animation: fade 1s ease-in-out forwards;
+    animation-play-state: paused; /* Waits for observer */
+}
+
+.fade-up, .fade-up-2, .fade-up-3, .fade-up-5 {
+    opacity: 0;
+    animation: fadeUp 1s ease-in-out forwards;
+    animation-play-state: paused; /* Waits for observer */
+}
+
+.fade-up-2 {
+    animation-duration: 2s;
+}
+
+.fade-up-3 {
+    animation-duration: 3s;
+}
+
+.fade-up-5 {
+    animation-duration: 5s;
+}
+
+.fade-down, .fade-down-2, .fade-down-3, .fade-down-5 {
+    opacity: 0;
+    animation: fadeDown 1s ease-in-out forwards;
+    animation-play-state: paused; /* Waits for observer */
+}
+
+.fade-down-2 {
+    animation-duration: 2s;
+}
+
+.fade-down-3 {
+    animation-duration: 3s;
+}
+
+.fade-down-5 {
+    animation-duration: 5s;
+}
+
+/* Base Class */
+.fadeafterdelay {
+    opacity: 0;
+    animation: fade var(--fade-duration, 1s) ease-in-out forwards;
+}
+
+/* Attribute Selectors for Dynamic Delay */
+.fadeafterdelay[class*="fadeafterdelay-"] {
+    animation-delay: calc(var(--delay, 0) * 1s);
+}
+
+/* Fade and grow effect for hr */
+.hr-grow {
+    transform: scaleX(0); /* Start fully collapsed */
+    transform-origin: center; /* Ensures it grows outward from the middle */
+    opacity: 0; /* Start fully transparent */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hr-grow.active {
+    transform: scaleX(1); /* Expand to full width */
+    opacity: 1; /* Fully visible */
+}
+
+
+.image-fade.active {
+    opacity: 1;
+    transform: scale(1);
+}

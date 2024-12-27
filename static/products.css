@@ -1,0 +1,83 @@
+/* Products Section */
+#products {
+    background-color: #f7f7f7; /* Matches your light background theme */
+    padding: 4rem 2rem;
+    height: 100vh;
+}
+
+#products h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#products h3 {
+    font-size: 1.75rem;
+    color: #db5858;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#products p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+#products img {
+    max-width: 90%;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 8px rgb(0, 0, 0, .45);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#products img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+#products .btn {
+    background-color: #db5858;
+    border: none;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+#products .btn:hover {
+    background-color: #c24444;
+}
+
+/* CONTACT */
+#contact {
+    background: var(--bg-dark);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    #products img {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    #products h2 {
+        font-size: 2rem;
+    }
+
+    #products h3 {
+        font-size: 1.5rem;
+    }
+}

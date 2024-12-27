@@ -1,0 +1,273 @@
+/* FULL SECTIONS */
+.full-section {
+    padding: 6rem 2rem;
+    color: var(--text-light);
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+/* HERO SECTION */
+#hero-location {
+    background: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66)), url('IMG_1215.JPG') center/cover no-repeat;
+}
+#hero-location::before {
+    background-color: rgba(0,0,0,0.7); /* Darker for hero */
+}
+/* HEADINGS AND TEXT */
+#hero-location h1 {
+    font-size: var(--heading-font-size);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+#hero-location p {
+    max-width: 600px;
+    margin: 1rem auto 0;
+}
+
+/* HOURS SECTION */
+#hours {
+    /* background: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66)), url('https://img.freepik.com/free-photo/vintage-chairs-barbershop_155003-10150.jpg') center/cover no-repeat; */
+    background: rgb(255, 240, 240);
+    min-height: 100vh;
+    color: rgb(47, 47, 47);
+}
+
+.hours-table {
+    border-collapse: separate; /* Ensures border-radius works */
+    border: rgb(255, 240, 240) .5rem solid;
+    border-spacing: 0; /* Avoids gaps between cells */
+    overflow: hidden; /* Ensures content respects the rounded border */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    
+}
+.hours-table .section-subtitle {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.hours-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.hours-table thead {
+    background-color: rgba(168, 168, 168, 0.633);
+    color: var(--text-light);
+    font-size: larger;
+}
+.hours-table th, .hours-table td {
+    border-bottom: 1px solid #bbbbbb;
+    background-color: rgba(33, 22, 17, 0.741);
+    vertical-align: middle;
+    height: 5rem;
+    color: var(--text-light);
+}
+.hours-table th {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+.hours-table tr:last-child td {
+    border-bottom: none;
+}
+
+@media (max-width: 1400px) { /* Adjust breakpoint as needed */
+    .hours-table th, .hours-table td {
+        height: 4.5rem;
+    }
+}
+
+@media (max-width: 1200px) { /* Adjust breakpoint as needed */
+    .hours-table th, .hours-table td {
+        height: 4rem;
+    }
+    
+}
+
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+    .hours-table th, .hours-table td {
+        height: 3rem;
+    }
+}
+
+@media (max-width: 576px) { /* Adjust breakpoint as needed */
+    .hours-table th, .hours-table td {
+        height: 2rem;
+    }
+}
+
+.image-stack {
+    position: relative;
+    display: inline-block;
+    width: fit-content; /* Ensure the container wraps tightly around the image */
+}
+
+.image-stack::before,
+.image-stack::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Light "blank image" effect */
+    border: 2px solid #ddd; /* Mimic image border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform-origin: center; /* Ensures alignment relative to the image center */
+    z-index: -1; /* Place behind the main image */
+}
+
+/* First layer offset */
+.image-stack::before {
+    transform: translate(-3.5%, -10px) rotate(-4deg); /* Adjust offsets and rotation */
+}
+
+/* Second layer offset */
+.image-stack::after {
+    transform: translate(3.5%, 0px) rotate(4deg); /* Adjust offsets and rotation */
+    opacity: 0.8; /* Slight transparency for depth */
+}
+
+.main-image {
+    position: relative;
+    z-index: 1; /* Ensures the image stays above the pseudo-elements */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transform: rotate(-0.85deg); /* Rotate the main image slightly */
+}
+
+.service-section {
+    margin-top: 2rem;
+}
+
+.service-image {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.service-section h4 {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+}
+
+/* PRICING SECTION */
+#pricing {
+    background: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66)), url('services.jpg') center/cover no-repeat;
+    min-height: 100vh;
+}
+.pricing-menu {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+.pricing-menu h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+.pricing-menu .section-subtitle {
+    margin-bottom: 2rem;
+}
+.menu-section h4 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #efefef;
+    transition: background var(--transition-speed);
+}
+.menu-item:hover {
+    background: rgba(255,255,255,0.1);
+}
+.menu-item div {
+    color: var(--text-light);
+}
+.menu-item span {
+    color: var(--text-muted);
+}
+.menu-item i {
+    margin-right: 0.5rem;
+    color: var(--accent);
+}
+
+/* GALLERY */
+#gallery {
+    background: #121212;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+#gallery h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+/* CONTACT */
+#contact {
+    background: var(--bg-dark);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* SOCIAL MEDIA */
+.social-media a {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+.social-media a:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+
+/* FOOTER */
+footer {
+    background: #111;
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    #hero-location h1 {
+        font-size: 2rem;
+    }
+    #hero-location p {
+        font-size: 1rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+}
