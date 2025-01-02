@@ -170,6 +170,11 @@
     margin-top: 0.5rem;
 }
 
+#reviews .proof p {
+    color: #000000;
+    font-size: large;
+}
+
 /* SPECIFIC FOOTER FOR THIS PAGE */
 footer.about-footer {
     background: #111;
