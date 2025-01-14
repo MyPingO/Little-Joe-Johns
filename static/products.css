@@ -2,7 +2,7 @@
 #products {
     background-color: #f7f7f7; /* Matches your light background theme */
     padding: 4rem 2rem;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 #products h2 {
