@@ -140,6 +140,13 @@
     margin-top: 2rem;
 }
 
+@media (max-width: 580px) {
+    .service-section {
+        --bs-gutter-x: 0;
+        --bs-gutter-y: 0;
+    }
+}
+
 .service-image {
     border: 2px solid #ddd;
     border-radius: 8px;
