@@ -168,20 +168,7 @@
     background: linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66)), url('services.jpg') center/cover no-repeat;
     min-height: 100vh;
 }
-.pricing-menu {
-    max-width: 600px;
-    margin: 0 auto;
-    border-radius: 5px;
-}
-.pricing-menu h2 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    letter-spacing: 1px;
-}
-.pricing-menu .section-subtitle {
-    margin-bottom: 2rem;
-}
+
 .menu-section h4 {
     font-weight: 700;
     margin-bottom: 1rem;
@@ -216,55 +203,8 @@
     padding: 4rem 2rem;
     text-align: center;
 }
-#gallery h2 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
-}
-
-/* CONTACT */
-#contact {
-    background: var(--bg-dark);
-    padding: 4rem 2rem;
-    text-align: center;
-}
-#contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* SOCIAL MEDIA */
-.social-media a {
-    color: var(--text-light);
-    font-size: 1.5rem;
-    margin: 0 0.5rem;
-    transition: color var(--transition-speed), transform var(--transition-speed);
-}
-.social-media a:hover {
-    color: var(--accent);
-    transform: translateY(-2px);
-}
 
 
-/* FOOTER */
-footer {
-    background: #111;
-    padding: 2rem 0;
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-footer a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-}
-footer a:hover {
-    text-decoration: underline;
-}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
@@ -274,7 +214,7 @@ footer a:hover {
     #hero-location p {
         font-size: 1rem;
     }
-    h2 {
+    h1 {
         font-size: 2rem;
     }
 }
